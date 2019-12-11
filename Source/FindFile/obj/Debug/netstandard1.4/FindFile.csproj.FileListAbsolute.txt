@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\bin\Debug\netstandard1.4\FindFile.deps.json
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\bin\Debug\netstandard1.4\FindFile.dll
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\bin\Debug\netstandard1.4\FindFile.pdb
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\FindFile.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\FindFile.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\FindFile.AssemblyInfo.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\FindFile.dll
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\FindFile.pdb
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskLexer.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskParser.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskListener.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseListener.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskVisitor.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseVisitor.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\FindFile.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
