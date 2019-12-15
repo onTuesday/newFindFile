@@ -26,27 +26,30 @@ namespace FindFile
         /// </summary>
         /// <param name="path">Начальная директория</param>
         /// <returns>Количество найденных файлов</returns>
-        public int GetAllFiles(string path)
+        public int TraverseAllFiles(string path)
         {
             int count = 0;
-            string[] filesInCurrentDir = Directory.GetFiles(path);
-            //Обрабатываем файлы
-            foreach (var file in filesInCurrentDir)
+            try
             {
-                ++count;
-                //Передаём файлы в обработчик
-                File fileToHandle = new File(file);
-                fileToHandle.SetContentAndLenFromFile();
-                this.maskHandler.Compare(fileToHandle);
+                string[] filesInCurrentDir = Directory.GetFiles(path);
+                //Обрабатываем файлы
+                foreach (var file in filesInCurrentDir)
+                {
+                    ++count;
+                    //Передаём файлы в обработчик
+                    File fileToHandle = new File(file);
+                    fileToHandle.SetContentAndLenFromFile();
+                    this.maskHandler.CompareWithExpression(fileToHandle);
+                }
+                //Рекурсивно вызываем данную функцию для каталогов
+                string[] directoriesInCurrentDir = Directory.GetDirectories(path);
+                foreach (var dir in directoriesInCurrentDir)
+                {
+                    count += TraverseAllFiles(dir);
+                }
             }
-
-            //Рекурсивно вызываем данную функцию для каталогов
-            string[] directoriesInCurrentDir = Directory.GetDirectories(path);
-            foreach (var dir in directoriesInCurrentDir)
-            {
-                count += GetAllFiles(dir);
-            }
-
+            catch (Exception)
+            { }
             return count;
         }
 

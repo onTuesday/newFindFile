@@ -22,7 +22,7 @@ namespace WinForm
             
             MaskHandler maskH = new MaskHandler("");
             DirectoryHandler dirHandler = new DirectoryHandler(maskH);
-            dirHandler.GetAllFiles(path);
+            dirHandler.TraverseAllFiles(path);
         }
     }
 }

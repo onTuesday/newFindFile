@@ -19,15 +19,6 @@ namespace FindFile
         /// Для поиска воспользуйтесь методом Find
         /// </summary>
 
-        public static List<string> result = new List<string>();
-
-        public static string error  { get; set; }
-
-        public Client()
-        {
-            error = null;
-        }
-
         /// <summary>
         /// Вызывается для поиска файлов.
         /// Результат записывается в список result
@@ -37,19 +28,9 @@ namespace FindFile
         /// <returns>0 в случае успеха</returns>
         public int Find(string path, string mask)
         {
-            try
-            {
-                MaskHandler maskHandler = new MaskHandler(mask);
-                DirectoryHandler dirHandler = new DirectoryHandler(maskHandler);
-                dirHandler.GetAllFiles(path);
-            }
-
-            finally
-            {
-                error = "Cannot open directory";
-            }
-
-            error = null;
+            MaskHandler maskHandler = new MaskHandler(mask);
+            DirectoryHandler dirHandler = new DirectoryHandler(maskHandler);
+            dirHandler.TraverseAllFiles(path);
             return 0;   
         }
     }

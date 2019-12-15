@@ -16,7 +16,7 @@ namespace Testing
             File file = new File(@"C:\Users\User\Desktop\Repos\FindFile\Testing\For Testing\TestFolder1\picture.jpg");
             file.SetContentAndLenFromFile();
             MaskHandler maskH = new MaskHandler("Name~'pic*.jpg'");
-            bool res = maskH.Compare(file);
+            bool res = maskH.CompareWithExpression(file);
             Assert.AreEqual(res, true);
         }
     }

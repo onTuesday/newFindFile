@@ -94,9 +94,9 @@ namespace FindFile
                 this.length = (UInt64)(new System.IO.FileInfo(name).Length);
                 
             }
-            finally 
+            catch(Exception)
             {
-                Client.error = "Cannot open file";
+                
             }
         }
 

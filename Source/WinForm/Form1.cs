@@ -28,13 +28,13 @@ namespace WinForm
         {
             Form2 newForm = new Form2();
             newForm.Show();
-            Client.result.Clear();
+            Result.result.Clear();
             Client a = new Client();
             a.Find(Path.GetFullPath(textBox1.Text), textBox2.Text + "\n");
 
 
             Form2.treeView1.Nodes.Clear();
-            foreach (string elem in Client.result)
+            foreach (string elem in Result.result)
             {
                 Form2.treeView1.BeginUpdate();
                 if (Form2.stop == true)

@@ -30,7 +30,7 @@ namespace FindFile
         /// </summary>
         /// <param name="file">Файл для проверки</param>
         /// <returns>Возвращает true если файл подошёл по маске, false в противном случае.</returns>
-        public bool Compare(File file)
+        public bool CompareWithExpression(File file)
         {
             MaskHandler.currentFile = file;
 
@@ -42,7 +42,7 @@ namespace FindFile
 
             if (final == true)
             {
-                Client.result.Add(Path.GetFullPath(file.GetName()));
+                Result.result.Add(Path.GetFullPath(file.GetName()));
                 return true;
             }
             return false;
