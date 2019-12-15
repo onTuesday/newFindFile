@@ -13,7 +13,7 @@ namespace VisualTesting
         static void Main(string[] args)
         {
             Client cl = new Client();
-            cl.Find(@"C:/dev", "Name='index.php'");
+            cl.Find(@"C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile.Test\TestFolder2", "Content~'Anime'");
             foreach (var elem in Result.result)
             {
                 Console.WriteLine(elem);
