@@ -15,7 +15,6 @@ namespace WinForm
 {
     public partial class Form1 : Form
     {
-        public static bool stopThread = true;
         public Form1()
         {
             InitializeComponent();
@@ -28,40 +27,27 @@ namespace WinForm
 
         public void button1_Click_1(object sender, EventArgs e)
         {
+            
+
             Form2 newForm = new Form2();
             newForm.Show();
             Result.result.Clear();
-            //Client a = new Client();
             Form2.treeView1.Nodes.Clear();
             Client a = new Client();
-            //Thread myThread = new Thread(new ThreadStart(WtiteTree));
-            //myThread.Start();
 
-            Thread th1 = new Thread(new ThreadStart(delegate
+            if (!CheckErrors.isPathExists(Path.GetFullPath(textBox1.Text)))
             {
-                a.Find(Path.GetFullPath(textBox1.Text), textBox2.Text + "\n");
-                stopThread = false;
-                MessageBox.Show("Done \n", "Справка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }));
-            th1.Priority = ThreadPriority.Highest;
-            th1.IsBackground = true;
-            th1.Start();
-
-            //a.Find(Path.GetFullPath(textBox1.Text), textBox2.Text + "\n");
-            while (stopThread == true)
+                MessageBox.Show(Error.GetErrorMsg(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
-                Thread.Sleep(10000);
-                foreach (string elem in Result.result)
+                Thread FindFileThread = new Thread(new ThreadStart(delegate
                 {
-                    Form2.treeView1.BeginUpdate();
-
-                    Form2.treeView1.Nodes.Add(elem);
-                    Form2.treeView1.EndUpdate();
-                }
-                /*if (Form2.stop == true)
-                {
-                    break;
-                }*/
+                    a.Find(Path.GetFullPath(textBox1.Text), textBox2.Text + "\n");
+                    MessageBox.Show("Done \n", "Справка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }));
+                FindFileThread.Priority = ThreadPriority.Highest;
+                FindFileThread.Start();
             }
         }   
 

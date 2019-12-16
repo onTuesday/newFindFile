@@ -35,5 +35,7 @@ namespace FindFile
             Result.isWorking = false;
             return 0;   
         }
+
+        
     }
 }

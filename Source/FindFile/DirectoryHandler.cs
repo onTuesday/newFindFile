@@ -29,6 +29,8 @@ namespace FindFile
         public int TraverseAllFiles(string path)
         {
             int count = 0;
+            if (Result.isWorking == false)
+                return count;
             try
             {
                 string[] filesInCurrentDir = Directory.GetFiles(path);
@@ -50,16 +52,6 @@ namespace FindFile
             }
             catch(UnauthorizedAccessException)
             {}
-            catch(DirectoryNotFoundException)
-            {
-                Error.SetError(@"Directory not Found.\nCheck Your's path.");
-                return count;
-            }
-            catch(PathTooLongException)
-            {
-                Error.SetError(@"Path too long!");
-                return count;
-            }
             catch (Exception)
             {
                 Error.SetError(@"Unknown error.");
