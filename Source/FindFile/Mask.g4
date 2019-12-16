@@ -45,11 +45,11 @@ boolexpr returns[bool value]
 	;
 
 expr returns[bool value]
-	: ( '('? eName     = exprName     {$value = $eName.value;}    ')'? )*
-	| ( '('? eLength   = exprLength   {$value = $eLength.value;}  ')'? )*
-	| ( '('? eContent  = exprContent  {$value = $eContent.value;} ')'? )*
+	: ( ' '? '('? eName     = exprName     {$value = $eName.value;}    ')'? ' '? )*
+	| ( ' '? '('? eLength   = exprLength   {$value = $eLength.value;}  ')'? ' '? )*
+	| ( ' '? '('? eContent  = exprContent  {$value = $eContent.value;} ')'? ' '? )*
  
-	| '(' boolexpr ')' {$value = $boolexpr.value;}
+	| ' '? '(' boolexpr ')' ' '? {$value = $boolexpr.value;}
 	;
 
 exprName returns[bool value]
