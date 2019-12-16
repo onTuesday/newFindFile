@@ -32,19 +32,28 @@ namespace FindFile
         /// <returns>Возвращает true если файл подошёл по маске, false в противном случае.</returns>
         public bool CompareWithExpression(File file)
         {
-            MaskHandler.currentFile = file;
-
-            AntlrInputStream input = new AntlrInputStream(this.mask + "\n");
-            MaskLexer lexer = new MaskLexer(input);
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            MaskParser parser = new MaskParser(tokens);
-            parser.mask();
-
-            if (final == true)
+           
+                MaskHandler.currentFile = file;
+            try
             {
-                Result.result.Add(Path.GetFullPath(file.GetName()));
-                return true;
+                AntlrInputStream input = new AntlrInputStream(this.mask + "\n");
+                MaskLexer lexer = new MaskLexer(input);
+                CommonTokenStream tokens = new CommonTokenStream(lexer);
+                MaskParser parser = new MaskParser(tokens);
+                parser.mask();
+
+                if (final == true)
+                {
+                    Result.result.Add(Path.GetFullPath(file.GetName()));
+                    return true;
+                }
             }
+
+            catch (InputMismatchException error)
+            {
+                Console.WriteLine("Error");
+            }
+
             return false;
         }
     }

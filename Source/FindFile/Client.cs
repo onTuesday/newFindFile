@@ -28,9 +28,11 @@ namespace FindFile
         /// <returns>0 в случае успеха</returns>
         public int Find(string path, string mask)
         {
+            Result.isWorking = true;
             MaskHandler maskHandler = new MaskHandler(mask);
             DirectoryHandler dirHandler = new DirectoryHandler(maskHandler);
             dirHandler.TraverseAllFiles(path);
+            Result.isWorking = false;
             return 0;   
         }
     }

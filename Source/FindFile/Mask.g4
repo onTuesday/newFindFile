@@ -21,7 +21,6 @@ options
 	String NAME	= Path.GetFileName(MaskHandler.currentFile.GetName());
     UInt64 LENGTH = MaskHandler.currentFile.GetLength();
     String CONTENT = MaskHandler.currentFile.GetContent();
-
 	bool IfFitsToNamemask(String Name, String Mask)
 	{
 		Regex mask = new Regex(Mask.Replace(".", "[.]").Replace("*", ".*").Replace("?", "."));
@@ -45,20 +44,20 @@ boolexpr returns[bool value]
 	;
 
 expr returns[bool value]
-	: ( '('? eName     = exprName     {$value = $eName.value;}    ')'? )*
-	| ( '('? eLength   = exprLength   {$value = $eLength.value;}  ')'? )*
-	| ( '('? eContent  = exprContent  {$value = $eContent.value;} ')'? )*
+	: ( ' '? '('? eName     = exprName     {$value = $eName.value;}    ')'? ' '? )*
+	| ( ' '? '('? eLength   = exprLength   {$value = $eLength.value;}  ')'? ' '? )*
+	| ( ' '? '('? eContent  = exprContent  {$value = $eContent.value;} ')'? ' '? )*
  
-	| '(' boolexpr ')' {$value = $boolexpr.value;}
+	| ' '? '(' boolexpr ')' ' '? {$value = $boolexpr.value;}
 	;
 
 exprName returns[bool value]
-	: 'Name' '=' '\'' NAME_SYMBOLS '\'' { $value = (NAME == $NAME_SYMBOLS.text); }
-	| 'Name' '~' '\'' NAME_SYMBOLS '\''{ $value = IfFitsToNamemask(NAME, $NAME_SYMBOLS.text); }
+	: 'Name' ' '? '=' ' '? '\'' NAME_SYMBOLS '\'' { $value = (NAME == $NAME_SYMBOLS.text); }
+	| 'Name' ' '? '~' ' '? '\'' NAME_SYMBOLS '\''{ $value = IfFitsToNamemask(NAME, $NAME_SYMBOLS.text); }
 	;
 
 exprLength returns[bool value]
-	: LENGTH_SYMBOLS EQUAL_SIGN 'Length'
+	: LENGTH_SYMBOLS ' '? EQUAL_SIGN ' '? 'Length'
 	{
 		String Size = $LENGTH_SYMBOLS.text;
 		UInt64 Length;
@@ -100,7 +99,7 @@ exprLength returns[bool value]
 		}
 	} 
   
-	| 'Length' EQUAL_SIGN LENGTH_SYMBOLS
+	| 'Length' ' '? EQUAL_SIGN ' '? LENGTH_SYMBOLS
 	{
 		String Size = $LENGTH_SYMBOLS.text;
 		UInt64 Length;
@@ -142,7 +141,7 @@ exprLength returns[bool value]
 		}
 	}
 
-	| LENGTH_SYMBOLS_1 EQUAL_SIGN_1 'Length' EQUAL_SIGN_2 LENGTH_SYMBOLS_2
+	| LENGTH_SYMBOLS_1 ' '? EQUAL_SIGN_1 ' '? 'Length' ' '? EQUAL_SIGN_2 ' '? LENGTH_SYMBOLS_2
 	{
 		String Size1 = $LENGTH_SYMBOLS_1.text;
 		UInt64 Length1;
@@ -267,7 +266,7 @@ exprLength returns[bool value]
   ;
 
 exprContent returns[bool value]
-	: 'Content' '~' '\'' CONTENT_SYMBOLS '\''{ $value = CONTENT.Contains($CONTENT_SYMBOLS.text); }
+	: 'Content' ' '? '~' ' '? '\'' CONTENT_SYMBOLS '\''{ $value = CONTENT.Contains($CONTENT_SYMBOLS.text); }
 	;
 
 EQUAL_SIGN

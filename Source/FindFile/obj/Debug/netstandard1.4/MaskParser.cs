@@ -39,9 +39,9 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 public partial class MaskParser : Parser {
 	public const int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, EQUAL_SIGN=12, EQUAL_SIGN_1=13, EQUAL_SIGN_2=14, NAME_SYMBOLS=15, 
-		LENGTH_SYMBOLS=16, LENGTH_SYMBOLS_1=17, LENGTH_SYMBOLS_2=18, CONTENT_SYMBOLS=19, 
-		NEWLINE=20;
+		T__9=10, T__10=11, T__11=12, EQUAL_SIGN=13, EQUAL_SIGN_1=14, EQUAL_SIGN_2=15, 
+		NAME_SYMBOLS=16, LENGTH_SYMBOLS=17, LENGTH_SYMBOLS_1=18, LENGTH_SYMBOLS_2=19, 
+		CONTENT_SYMBOLS=20, NEWLINE=21;
 	public const int
 		RULE_mask = 0, RULE_statement = 1, RULE_boolexpr = 2, RULE_expr = 3, RULE_exprName = 4, 
 		RULE_exprLength = 5, RULE_exprContent = 6;
@@ -50,12 +50,12 @@ public partial class MaskParser : Parser {
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, "'&'", "'|'", "'^'", "'('", "')'", "'Name'", "'='", "'''", "'~'", 
-		"'Length'", "'Content'"
+		null, "'&'", "'|'", "'^'", "' '", "'('", "')'", "'Name'", "'='", "'''", 
+		"'~'", "'Length'", "'Content'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		"EQUAL_SIGN", "EQUAL_SIGN_1", "EQUAL_SIGN_2", "NAME_SYMBOLS", "LENGTH_SYMBOLS", 
+		null, "EQUAL_SIGN", "EQUAL_SIGN_1", "EQUAL_SIGN_2", "NAME_SYMBOLS", "LENGTH_SYMBOLS", 
 		"LENGTH_SYMBOLS_1", "LENGTH_SYMBOLS_2", "CONTENT_SYMBOLS", "NEWLINE"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
@@ -107,7 +107,6 @@ public partial class MaskParser : Parser {
 		String NAME	= Path.GetFileName(MaskHandler.currentFile.GetName());
 	    UInt64 LENGTH = MaskHandler.currentFile.GetLength();
 	    String CONTENT = MaskHandler.currentFile.GetContent();
-
 		bool IfFitsToNamemask(String Name, String Mask)
 		{
 			Regex mask = new Regex(Mask.Replace(".", "[.]").Replace("*", ".*").Replace("?", "."));
@@ -356,16 +355,16 @@ public partial class MaskParser : Parser {
 		EnterRule(_localctx, 6, RULE_expr);
 		int _la;
 		try {
-			State = 82;
+			State = 106;
 			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,11,_ctx) ) {
+			switch ( Interpreter.AdaptivePredict(_input,19,_ctx) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 48;
+				State = 54;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
-				while (_la==T__3 || _la==T__5) {
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__6))) != 0)) {
 					{
 					{
 					State = 39;
@@ -377,20 +376,38 @@ public partial class MaskParser : Parser {
 						}
 					}
 
-					State = 41; _localctx.eName = exprName();
-					_localctx.value =  _localctx.eName.value;
-					State = 44;
+					State = 42;
 					_errHandler.Sync(this);
-					switch ( Interpreter.AdaptivePredict(_input,3,_ctx) ) {
+					_la = _input.La(1);
+					if (_la==T__4) {
+						{
+						State = 41; Match(T__4);
+						}
+					}
+
+					State = 44; _localctx.eName = exprName();
+					_localctx.value =  _localctx.eName.value;
+					State = 47;
+					_errHandler.Sync(this);
+					switch ( Interpreter.AdaptivePredict(_input,4,_ctx) ) {
 					case 1:
 						{
-						State = 43; Match(T__4);
+						State = 46; Match(T__5);
+						}
+						break;
+					}
+					State = 50;
+					_errHandler.Sync(this);
+					switch ( Interpreter.AdaptivePredict(_input,5,_ctx) ) {
+					case 1:
+						{
+						State = 49; Match(T__3);
 						}
 						break;
 					}
 					}
 					}
-					State = 50;
+					State = 56;
 					_errHandler.Sync(this);
 					_la = _input.La(1);
 				}
@@ -400,35 +417,53 @@ public partial class MaskParser : Parser {
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 61;
+				State = 73;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__9) | (1L << LENGTH_SYMBOLS) | (1L << LENGTH_SYMBOLS_1))) != 0)) {
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__10) | (1L << LENGTH_SYMBOLS) | (1L << LENGTH_SYMBOLS_1))) != 0)) {
 					{
 					{
-					State = 52;
+					State = 58;
 					_errHandler.Sync(this);
 					_la = _input.La(1);
 					if (_la==T__3) {
 						{
-						State = 51; Match(T__3);
+						State = 57; Match(T__3);
 						}
 					}
 
-					State = 54; _localctx.eLength = exprLength();
-					_localctx.value =  _localctx.eLength.value;
-					State = 57;
+					State = 61;
 					_errHandler.Sync(this);
-					switch ( Interpreter.AdaptivePredict(_input,6,_ctx) ) {
+					_la = _input.La(1);
+					if (_la==T__4) {
+						{
+						State = 60; Match(T__4);
+						}
+					}
+
+					State = 63; _localctx.eLength = exprLength();
+					_localctx.value =  _localctx.eLength.value;
+					State = 66;
+					_errHandler.Sync(this);
+					switch ( Interpreter.AdaptivePredict(_input,9,_ctx) ) {
 					case 1:
 						{
-						State = 56; Match(T__4);
+						State = 65; Match(T__5);
+						}
+						break;
+					}
+					State = 69;
+					_errHandler.Sync(this);
+					switch ( Interpreter.AdaptivePredict(_input,10,_ctx) ) {
+					case 1:
+						{
+						State = 68; Match(T__3);
 						}
 						break;
 					}
 					}
 					}
-					State = 63;
+					State = 75;
 					_errHandler.Sync(this);
 					_la = _input.La(1);
 				}
@@ -438,35 +473,53 @@ public partial class MaskParser : Parser {
 			case 3:
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 74;
+				State = 92;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
-				while (_la==T__3 || _la==T__10) {
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__11))) != 0)) {
 					{
 					{
-					State = 65;
+					State = 77;
 					_errHandler.Sync(this);
 					_la = _input.La(1);
 					if (_la==T__3) {
 						{
-						State = 64; Match(T__3);
+						State = 76; Match(T__3);
 						}
 					}
 
-					State = 67; _localctx.eContent = exprContent();
-					_localctx.value =  _localctx.eContent.value;
-					State = 70;
+					State = 80;
 					_errHandler.Sync(this);
-					switch ( Interpreter.AdaptivePredict(_input,9,_ctx) ) {
+					_la = _input.La(1);
+					if (_la==T__4) {
+						{
+						State = 79; Match(T__4);
+						}
+					}
+
+					State = 82; _localctx.eContent = exprContent();
+					_localctx.value =  _localctx.eContent.value;
+					State = 85;
+					_errHandler.Sync(this);
+					switch ( Interpreter.AdaptivePredict(_input,14,_ctx) ) {
 					case 1:
 						{
-						State = 69; Match(T__4);
+						State = 84; Match(T__5);
+						}
+						break;
+					}
+					State = 88;
+					_errHandler.Sync(this);
+					switch ( Interpreter.AdaptivePredict(_input,15,_ctx) ) {
+					case 1:
+						{
+						State = 87; Match(T__3);
 						}
 						break;
 					}
 					}
 					}
-					State = 76;
+					State = 94;
 					_errHandler.Sync(this);
 					_la = _input.La(1);
 				}
@@ -476,9 +529,27 @@ public partial class MaskParser : Parser {
 			case 4:
 				EnterOuterAlt(_localctx, 4);
 				{
-				State = 77; Match(T__3);
-				State = 78; _localctx._boolexpr = boolexpr();
-				State = 79; Match(T__4);
+				State = 96;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 95; Match(T__3);
+					}
+				}
+
+				State = 98; Match(T__4);
+				State = 99; _localctx._boolexpr = boolexpr();
+				State = 100; Match(T__5);
+				State = 102;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 101; Match(T__3);
+					}
+				}
+
 				_localctx.value =  _localctx._boolexpr.value;
 				}
 				break;
@@ -523,18 +594,37 @@ public partial class MaskParser : Parser {
 	public ExprNameContext exprName() {
 		ExprNameContext _localctx = new ExprNameContext(_ctx, State);
 		EnterRule(_localctx, 8, RULE_exprName);
+		int _la;
 		try {
-			State = 96;
+			State = 132;
 			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,12,_ctx) ) {
+			switch ( Interpreter.AdaptivePredict(_input,24,_ctx) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 84; Match(T__5);
-				State = 85; Match(T__6);
-				State = 86; Match(T__7);
-				State = 87; _localctx._NAME_SYMBOLS = Match(NAME_SYMBOLS);
-				State = 88; Match(T__7);
+				State = 108; Match(T__6);
+				State = 110;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 109; Match(T__3);
+					}
+				}
+
+				State = 112; Match(T__7);
+				State = 114;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 113; Match(T__3);
+					}
+				}
+
+				State = 116; Match(T__8);
+				State = 117; _localctx._NAME_SYMBOLS = Match(NAME_SYMBOLS);
+				State = 118; Match(T__8);
 				 _localctx.value =  (NAME == (_localctx._NAME_SYMBOLS!=null?_localctx._NAME_SYMBOLS.Text:null)); 
 				}
 				break;
@@ -542,11 +632,29 @@ public partial class MaskParser : Parser {
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 90; Match(T__5);
-				State = 91; Match(T__8);
-				State = 92; Match(T__7);
-				State = 93; _localctx._NAME_SYMBOLS = Match(NAME_SYMBOLS);
-				State = 94; Match(T__7);
+				State = 120; Match(T__6);
+				State = 122;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 121; Match(T__3);
+					}
+				}
+
+				State = 124; Match(T__9);
+				State = 126;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 125; Match(T__3);
+					}
+				}
+
+				State = 128; Match(T__8);
+				State = 129; _localctx._NAME_SYMBOLS = Match(NAME_SYMBOLS);
+				State = 130; Match(T__8);
 				 _localctx.value =  IfFitsToNamemask(NAME, (_localctx._NAME_SYMBOLS!=null?_localctx._NAME_SYMBOLS.Text:null)); 
 				}
 				break;
@@ -601,16 +709,35 @@ public partial class MaskParser : Parser {
 	public ExprLengthContext exprLength() {
 		ExprLengthContext _localctx = new ExprLengthContext(_ctx, State);
 		EnterRule(_localctx, 10, RULE_exprLength);
+		int _la;
 		try {
-			State = 112;
+			State = 172;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
 			case LENGTH_SYMBOLS:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 98; _localctx._LENGTH_SYMBOLS = Match(LENGTH_SYMBOLS);
-				State = 99; _localctx._EQUAL_SIGN = Match(EQUAL_SIGN);
-				State = 100; Match(T__9);
+				State = 134; _localctx._LENGTH_SYMBOLS = Match(LENGTH_SYMBOLS);
+				State = 136;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 135; Match(T__3);
+					}
+				}
+
+				State = 138; _localctx._EQUAL_SIGN = Match(EQUAL_SIGN);
+				State = 140;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 139; Match(T__3);
+					}
+				}
+
+				State = 142; Match(T__10);
 
 						String Size = (_localctx._LENGTH_SYMBOLS!=null?_localctx._LENGTH_SYMBOLS.Text:null);
 						UInt64 Length;
@@ -653,12 +780,30 @@ public partial class MaskParser : Parser {
 					
 				}
 				break;
-			case T__9:
+			case T__10:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 102; Match(T__9);
-				State = 103; _localctx._EQUAL_SIGN = Match(EQUAL_SIGN);
-				State = 104; _localctx._LENGTH_SYMBOLS = Match(LENGTH_SYMBOLS);
+				State = 144; Match(T__10);
+				State = 146;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 145; Match(T__3);
+					}
+				}
+
+				State = 148; _localctx._EQUAL_SIGN = Match(EQUAL_SIGN);
+				State = 150;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 149; Match(T__3);
+					}
+				}
+
+				State = 152; _localctx._LENGTH_SYMBOLS = Match(LENGTH_SYMBOLS);
 
 						String Size = (_localctx._LENGTH_SYMBOLS!=null?_localctx._LENGTH_SYMBOLS.Text:null);
 						UInt64 Length;
@@ -704,11 +849,47 @@ public partial class MaskParser : Parser {
 			case LENGTH_SYMBOLS_1:
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 106; _localctx._LENGTH_SYMBOLS_1 = Match(LENGTH_SYMBOLS_1);
-				State = 107; _localctx._EQUAL_SIGN_1 = Match(EQUAL_SIGN_1);
-				State = 108; Match(T__9);
-				State = 109; _localctx._EQUAL_SIGN_2 = Match(EQUAL_SIGN_2);
-				State = 110; _localctx._LENGTH_SYMBOLS_2 = Match(LENGTH_SYMBOLS_2);
+				State = 154; _localctx._LENGTH_SYMBOLS_1 = Match(LENGTH_SYMBOLS_1);
+				State = 156;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 155; Match(T__3);
+					}
+				}
+
+				State = 158; _localctx._EQUAL_SIGN_1 = Match(EQUAL_SIGN_1);
+				State = 160;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 159; Match(T__3);
+					}
+				}
+
+				State = 162; Match(T__10);
+				State = 164;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 163; Match(T__3);
+					}
+				}
+
+				State = 166; _localctx._EQUAL_SIGN_2 = Match(EQUAL_SIGN_2);
+				State = 168;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__3) {
+					{
+					State = 167; Match(T__3);
+					}
+				}
+
+				State = 170; _localctx._LENGTH_SYMBOLS_2 = Match(LENGTH_SYMBOLS_2);
 
 						String Size1 = (_localctx._LENGTH_SYMBOLS_1!=null?_localctx._LENGTH_SYMBOLS_1.Text:null);
 						UInt64 Length1;
@@ -875,14 +1056,33 @@ public partial class MaskParser : Parser {
 	public ExprContentContext exprContent() {
 		ExprContentContext _localctx = new ExprContentContext(_ctx, State);
 		EnterRule(_localctx, 12, RULE_exprContent);
+		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 114; Match(T__10);
-			State = 115; Match(T__8);
-			State = 116; Match(T__7);
-			State = 117; _localctx._CONTENT_SYMBOLS = Match(CONTENT_SYMBOLS);
-			State = 118; Match(T__7);
+			State = 174; Match(T__11);
+			State = 176;
+			_errHandler.Sync(this);
+			_la = _input.La(1);
+			if (_la==T__3) {
+				{
+				State = 175; Match(T__3);
+				}
+			}
+
+			State = 178; Match(T__9);
+			State = 180;
+			_errHandler.Sync(this);
+			_la = _input.La(1);
+			if (_la==T__3) {
+				{
+				State = 179; Match(T__3);
+				}
+			}
+
+			State = 182; Match(T__8);
+			State = 183; _localctx._CONTENT_SYMBOLS = Match(CONTENT_SYMBOLS);
+			State = 184; Match(T__8);
 			 _localctx.value =  CONTENT.Contains((_localctx._CONTENT_SYMBOLS!=null?_localctx._CONTENT_SYMBOLS.Text:null)); 
 			}
 		}
@@ -898,48 +1098,79 @@ public partial class MaskParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\x16|\x4\x2\t\x2"+
-		"\x4\x3\t\x3\x4\x4\t\x4\x4\x5\t\x5\x4\x6\t\x6\x4\a\t\a\x4\b\t\b\x3\x2\x3"+
-		"\x2\x3\x3\x3\x3\x3\x3\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4"+
-		"\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\a\x4$\n\x4\f\x4\xE\x4\'\v\x4\x3\x5"+
-		"\x5\x5*\n\x5\x3\x5\x3\x5\x3\x5\x5\x5/\n\x5\a\x5\x31\n\x5\f\x5\xE\x5\x34"+
-		"\v\x5\x3\x5\x5\x5\x37\n\x5\x3\x5\x3\x5\x3\x5\x5\x5<\n\x5\a\x5>\n\x5\f"+
-		"\x5\xE\x5\x41\v\x5\x3\x5\x5\x5\x44\n\x5\x3\x5\x3\x5\x3\x5\x5\x5I\n\x5"+
-		"\a\x5K\n\x5\f\x5\xE\x5N\v\x5\x3\x5\x3\x5\x3\x5\x3\x5\x3\x5\x5\x5U\n\x5"+
-		"\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3"+
-		"\x6\x5\x6\x63\n\x6\x3\a\x3\a\x3\a\x3\a\x3\a\x3\a\x3\a\x3\a\x3\a\x3\a\x3"+
-		"\a\x3\a\x3\a\x3\a\x5\as\n\a\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b\x2"+
-		"\x2\x2\t\x2\x2\x4\x2\x6\x2\b\x2\n\x2\f\x2\xE\x2\x2\x2\x86\x2\x10\x3\x2"+
-		"\x2\x2\x4\x12\x3\x2\x2\x2\x6\x15\x3\x2\x2\x2\bT\x3\x2\x2\x2\n\x62\x3\x2"+
-		"\x2\x2\fr\x3\x2\x2\x2\xEt\x3\x2\x2\x2\x10\x11\x5\x4\x3\x2\x11\x3\x3\x2"+
-		"\x2\x2\x12\x13\x5\x6\x4\x2\x13\x14\b\x3\x1\x2\x14\x5\x3\x2\x2\x2\x15\x16"+
-		"\x5\b\x5\x2\x16%\b\x4\x1\x2\x17\x18\a\x3\x2\x2\x18\x19\x5\b\x5\x2\x19"+
-		"\x1A\b\x4\x1\x2\x1A$\x3\x2\x2\x2\x1B\x1C\a\x4\x2\x2\x1C\x1D\x5\b\x5\x2"+
-		"\x1D\x1E\b\x4\x1\x2\x1E$\x3\x2\x2\x2\x1F \a\x5\x2\x2 !\x5\b\x5\x2!\"\b"+
-		"\x4\x1\x2\"$\x3\x2\x2\x2#\x17\x3\x2\x2\x2#\x1B\x3\x2\x2\x2#\x1F\x3\x2"+
-		"\x2\x2$\'\x3\x2\x2\x2%#\x3\x2\x2\x2%&\x3\x2\x2\x2&\a\x3\x2\x2\x2\'%\x3"+
-		"\x2\x2\x2(*\a\x6\x2\x2)(\x3\x2\x2\x2)*\x3\x2\x2\x2*+\x3\x2\x2\x2+,\x5"+
-		"\n\x6\x2,.\b\x5\x1\x2-/\a\a\x2\x2.-\x3\x2\x2\x2./\x3\x2\x2\x2/\x31\x3"+
-		"\x2\x2\x2\x30)\x3\x2\x2\x2\x31\x34\x3\x2\x2\x2\x32\x30\x3\x2\x2\x2\x32"+
-		"\x33\x3\x2\x2\x2\x33U\x3\x2\x2\x2\x34\x32\x3\x2\x2\x2\x35\x37\a\x6\x2"+
-		"\x2\x36\x35\x3\x2\x2\x2\x36\x37\x3\x2\x2\x2\x37\x38\x3\x2\x2\x2\x38\x39"+
-		"\x5\f\a\x2\x39;\b\x5\x1\x2:<\a\a\x2\x2;:\x3\x2\x2\x2;<\x3\x2\x2\x2<>\x3"+
-		"\x2\x2\x2=\x36\x3\x2\x2\x2>\x41\x3\x2\x2\x2?=\x3\x2\x2\x2?@\x3\x2\x2\x2"+
-		"@U\x3\x2\x2\x2\x41?\x3\x2\x2\x2\x42\x44\a\x6\x2\x2\x43\x42\x3\x2\x2\x2"+
-		"\x43\x44\x3\x2\x2\x2\x44\x45\x3\x2\x2\x2\x45\x46\x5\xE\b\x2\x46H\b\x5"+
-		"\x1\x2GI\a\a\x2\x2HG\x3\x2\x2\x2HI\x3\x2\x2\x2IK\x3\x2\x2\x2J\x43\x3\x2"+
-		"\x2\x2KN\x3\x2\x2\x2LJ\x3\x2\x2\x2LM\x3\x2\x2\x2MU\x3\x2\x2\x2NL\x3\x2"+
-		"\x2\x2OP\a\x6\x2\x2PQ\x5\x6\x4\x2QR\a\a\x2\x2RS\b\x5\x1\x2SU\x3\x2\x2"+
-		"\x2T\x32\x3\x2\x2\x2T?\x3\x2\x2\x2TL\x3\x2\x2\x2TO\x3\x2\x2\x2U\t\x3\x2"+
-		"\x2\x2VW\a\b\x2\x2WX\a\t\x2\x2XY\a\n\x2\x2YZ\a\x11\x2\x2Z[\a\n\x2\x2["+
-		"\x63\b\x6\x1\x2\\]\a\b\x2\x2]^\a\v\x2\x2^_\a\n\x2\x2_`\a\x11\x2\x2`\x61"+
-		"\a\n\x2\x2\x61\x63\b\x6\x1\x2\x62V\x3\x2\x2\x2\x62\\\x3\x2\x2\x2\x63\v"+
-		"\x3\x2\x2\x2\x64\x65\a\x12\x2\x2\x65\x66\a\xE\x2\x2\x66g\a\f\x2\x2gs\b"+
-		"\a\x1\x2hi\a\f\x2\x2ij\a\xE\x2\x2jk\a\x12\x2\x2ks\b\a\x1\x2lm\a\x13\x2"+
-		"\x2mn\a\xF\x2\x2no\a\f\x2\x2op\a\x10\x2\x2pq\a\x14\x2\x2qs\b\a\x1\x2r"+
-		"\x64\x3\x2\x2\x2rh\x3\x2\x2\x2rl\x3\x2\x2\x2s\r\x3\x2\x2\x2tu\a\r\x2\x2"+
-		"uv\a\v\x2\x2vw\a\n\x2\x2wx\a\x15\x2\x2xy\a\n\x2\x2yz\b\b\x1\x2z\xF\x3"+
-		"\x2\x2\x2\x10#%).\x32\x36;?\x43HLT\x62r";
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\x17\xBE\x4\x2\t"+
+		"\x2\x4\x3\t\x3\x4\x4\t\x4\x4\x5\t\x5\x4\x6\t\x6\x4\a\t\a\x4\b\t\b\x3\x2"+
+		"\x3\x2\x3\x3\x3\x3\x3\x3\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3"+
+		"\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\x3\x4\a\x4$\n\x4\f\x4\xE\x4\'\v\x4\x3"+
+		"\x5\x5\x5*\n\x5\x3\x5\x5\x5-\n\x5\x3\x5\x3\x5\x3\x5\x5\x5\x32\n\x5\x3"+
+		"\x5\x5\x5\x35\n\x5\a\x5\x37\n\x5\f\x5\xE\x5:\v\x5\x3\x5\x5\x5=\n\x5\x3"+
+		"\x5\x5\x5@\n\x5\x3\x5\x3\x5\x3\x5\x5\x5\x45\n\x5\x3\x5\x5\x5H\n\x5\a\x5"+
+		"J\n\x5\f\x5\xE\x5M\v\x5\x3\x5\x5\x5P\n\x5\x3\x5\x5\x5S\n\x5\x3\x5\x3\x5"+
+		"\x3\x5\x5\x5X\n\x5\x3\x5\x5\x5[\n\x5\a\x5]\n\x5\f\x5\xE\x5`\v\x5\x3\x5"+
+		"\x5\x5\x63\n\x5\x3\x5\x3\x5\x3\x5\x3\x5\x5\x5i\n\x5\x3\x5\x3\x5\x5\x5"+
+		"m\n\x5\x3\x6\x3\x6\x5\x6q\n\x6\x3\x6\x3\x6\x5\x6u\n\x6\x3\x6\x3\x6\x3"+
+		"\x6\x3\x6\x3\x6\x3\x6\x5\x6}\n\x6\x3\x6\x3\x6\x5\x6\x81\n\x6\x3\x6\x3"+
+		"\x6\x3\x6\x3\x6\x5\x6\x87\n\x6\x3\a\x3\a\x5\a\x8B\n\a\x3\a\x3\a\x5\a\x8F"+
+		"\n\a\x3\a\x3\a\x3\a\x3\a\x5\a\x95\n\a\x3\a\x3\a\x5\a\x99\n\a\x3\a\x3\a"+
+		"\x3\a\x3\a\x5\a\x9F\n\a\x3\a\x3\a\x5\a\xA3\n\a\x3\a\x3\a\x5\a\xA7\n\a"+
+		"\x3\a\x3\a\x5\a\xAB\n\a\x3\a\x3\a\x5\a\xAF\n\a\x3\b\x3\b\x5\b\xB3\n\b"+
+		"\x3\b\x3\b\x5\b\xB7\n\b\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b\x2\x2\x2\t\x2\x2"+
+		"\x4\x2\x6\x2\b\x2\n\x2\f\x2\xE\x2\x2\x2\xDE\x2\x10\x3\x2\x2\x2\x4\x12"+
+		"\x3\x2\x2\x2\x6\x15\x3\x2\x2\x2\bl\x3\x2\x2\x2\n\x86\x3\x2\x2\x2\f\xAE"+
+		"\x3\x2\x2\x2\xE\xB0\x3\x2\x2\x2\x10\x11\x5\x4\x3\x2\x11\x3\x3\x2\x2\x2"+
+		"\x12\x13\x5\x6\x4\x2\x13\x14\b\x3\x1\x2\x14\x5\x3\x2\x2\x2\x15\x16\x5"+
+		"\b\x5\x2\x16%\b\x4\x1\x2\x17\x18\a\x3\x2\x2\x18\x19\x5\b\x5\x2\x19\x1A"+
+		"\b\x4\x1\x2\x1A$\x3\x2\x2\x2\x1B\x1C\a\x4\x2\x2\x1C\x1D\x5\b\x5\x2\x1D"+
+		"\x1E\b\x4\x1\x2\x1E$\x3\x2\x2\x2\x1F \a\x5\x2\x2 !\x5\b\x5\x2!\"\b\x4"+
+		"\x1\x2\"$\x3\x2\x2\x2#\x17\x3\x2\x2\x2#\x1B\x3\x2\x2\x2#\x1F\x3\x2\x2"+
+		"\x2$\'\x3\x2\x2\x2%#\x3\x2\x2\x2%&\x3\x2\x2\x2&\a\x3\x2\x2\x2\'%\x3\x2"+
+		"\x2\x2(*\a\x6\x2\x2)(\x3\x2\x2\x2)*\x3\x2\x2\x2*,\x3\x2\x2\x2+-\a\a\x2"+
+		"\x2,+\x3\x2\x2\x2,-\x3\x2\x2\x2-.\x3\x2\x2\x2./\x5\n\x6\x2/\x31\b\x5\x1"+
+		"\x2\x30\x32\a\b\x2\x2\x31\x30\x3\x2\x2\x2\x31\x32\x3\x2\x2\x2\x32\x34"+
+		"\x3\x2\x2\x2\x33\x35\a\x6\x2\x2\x34\x33\x3\x2\x2\x2\x34\x35\x3\x2\x2\x2"+
+		"\x35\x37\x3\x2\x2\x2\x36)\x3\x2\x2\x2\x37:\x3\x2\x2\x2\x38\x36\x3\x2\x2"+
+		"\x2\x38\x39\x3\x2\x2\x2\x39m\x3\x2\x2\x2:\x38\x3\x2\x2\x2;=\a\x6\x2\x2"+
+		"<;\x3\x2\x2\x2<=\x3\x2\x2\x2=?\x3\x2\x2\x2>@\a\a\x2\x2?>\x3\x2\x2\x2?"+
+		"@\x3\x2\x2\x2@\x41\x3\x2\x2\x2\x41\x42\x5\f\a\x2\x42\x44\b\x5\x1\x2\x43"+
+		"\x45\a\b\x2\x2\x44\x43\x3\x2\x2\x2\x44\x45\x3\x2\x2\x2\x45G\x3\x2\x2\x2"+
+		"\x46H\a\x6\x2\x2G\x46\x3\x2\x2\x2GH\x3\x2\x2\x2HJ\x3\x2\x2\x2I<\x3\x2"+
+		"\x2\x2JM\x3\x2\x2\x2KI\x3\x2\x2\x2KL\x3\x2\x2\x2Lm\x3\x2\x2\x2MK\x3\x2"+
+		"\x2\x2NP\a\x6\x2\x2ON\x3\x2\x2\x2OP\x3\x2\x2\x2PR\x3\x2\x2\x2QS\a\a\x2"+
+		"\x2RQ\x3\x2\x2\x2RS\x3\x2\x2\x2ST\x3\x2\x2\x2TU\x5\xE\b\x2UW\b\x5\x1\x2"+
+		"VX\a\b\x2\x2WV\x3\x2\x2\x2WX\x3\x2\x2\x2XZ\x3\x2\x2\x2Y[\a\x6\x2\x2ZY"+
+		"\x3\x2\x2\x2Z[\x3\x2\x2\x2[]\x3\x2\x2\x2\\O\x3\x2\x2\x2]`\x3\x2\x2\x2"+
+		"^\\\x3\x2\x2\x2^_\x3\x2\x2\x2_m\x3\x2\x2\x2`^\x3\x2\x2\x2\x61\x63\a\x6"+
+		"\x2\x2\x62\x61\x3\x2\x2\x2\x62\x63\x3\x2\x2\x2\x63\x64\x3\x2\x2\x2\x64"+
+		"\x65\a\a\x2\x2\x65\x66\x5\x6\x4\x2\x66h\a\b\x2\x2gi\a\x6\x2\x2hg\x3\x2"+
+		"\x2\x2hi\x3\x2\x2\x2ij\x3\x2\x2\x2jk\b\x5\x1\x2km\x3\x2\x2\x2l\x38\x3"+
+		"\x2\x2\x2lK\x3\x2\x2\x2l^\x3\x2\x2\x2l\x62\x3\x2\x2\x2m\t\x3\x2\x2\x2"+
+		"np\a\t\x2\x2oq\a\x6\x2\x2po\x3\x2\x2\x2pq\x3\x2\x2\x2qr\x3\x2\x2\x2rt"+
+		"\a\n\x2\x2su\a\x6\x2\x2ts\x3\x2\x2\x2tu\x3\x2\x2\x2uv\x3\x2\x2\x2vw\a"+
+		"\v\x2\x2wx\a\x12\x2\x2xy\a\v\x2\x2y\x87\b\x6\x1\x2z|\a\t\x2\x2{}\a\x6"+
+		"\x2\x2|{\x3\x2\x2\x2|}\x3\x2\x2\x2}~\x3\x2\x2\x2~\x80\a\f\x2\x2\x7F\x81"+
+		"\a\x6\x2\x2\x80\x7F\x3\x2\x2\x2\x80\x81\x3\x2\x2\x2\x81\x82\x3\x2\x2\x2"+
+		"\x82\x83\a\v\x2\x2\x83\x84\a\x12\x2\x2\x84\x85\a\v\x2\x2\x85\x87\b\x6"+
+		"\x1\x2\x86n\x3\x2\x2\x2\x86z\x3\x2\x2\x2\x87\v\x3\x2\x2\x2\x88\x8A\a\x13"+
+		"\x2\x2\x89\x8B\a\x6\x2\x2\x8A\x89\x3\x2\x2\x2\x8A\x8B\x3\x2\x2\x2\x8B"+
+		"\x8C\x3\x2\x2\x2\x8C\x8E\a\xF\x2\x2\x8D\x8F\a\x6\x2\x2\x8E\x8D\x3\x2\x2"+
+		"\x2\x8E\x8F\x3\x2\x2\x2\x8F\x90\x3\x2\x2\x2\x90\x91\a\r\x2\x2\x91\xAF"+
+		"\b\a\x1\x2\x92\x94\a\r\x2\x2\x93\x95\a\x6\x2\x2\x94\x93\x3\x2\x2\x2\x94"+
+		"\x95\x3\x2\x2\x2\x95\x96\x3\x2\x2\x2\x96\x98\a\xF\x2\x2\x97\x99\a\x6\x2"+
+		"\x2\x98\x97\x3\x2\x2\x2\x98\x99\x3\x2\x2\x2\x99\x9A\x3\x2\x2\x2\x9A\x9B"+
+		"\a\x13\x2\x2\x9B\xAF\b\a\x1\x2\x9C\x9E\a\x14\x2\x2\x9D\x9F\a\x6\x2\x2"+
+		"\x9E\x9D\x3\x2\x2\x2\x9E\x9F\x3\x2\x2\x2\x9F\xA0\x3\x2\x2\x2\xA0\xA2\a"+
+		"\x10\x2\x2\xA1\xA3\a\x6\x2\x2\xA2\xA1\x3\x2\x2\x2\xA2\xA3\x3\x2\x2\x2"+
+		"\xA3\xA4\x3\x2\x2\x2\xA4\xA6\a\r\x2\x2\xA5\xA7\a\x6\x2\x2\xA6\xA5\x3\x2"+
+		"\x2\x2\xA6\xA7\x3\x2\x2\x2\xA7\xA8\x3\x2\x2\x2\xA8\xAA\a\x11\x2\x2\xA9"+
+		"\xAB\a\x6\x2\x2\xAA\xA9\x3\x2\x2\x2\xAA\xAB\x3\x2\x2\x2\xAB\xAC\x3\x2"+
+		"\x2\x2\xAC\xAD\a\x15\x2\x2\xAD\xAF\b\a\x1\x2\xAE\x88\x3\x2\x2\x2\xAE\x92"+
+		"\x3\x2\x2\x2\xAE\x9C\x3\x2\x2\x2\xAF\r\x3\x2\x2\x2\xB0\xB2\a\xE\x2\x2"+
+		"\xB1\xB3\a\x6\x2\x2\xB2\xB1\x3\x2\x2\x2\xB2\xB3\x3\x2\x2\x2\xB3\xB4\x3"+
+		"\x2\x2\x2\xB4\xB6\a\f\x2\x2\xB5\xB7\a\x6\x2\x2\xB6\xB5\x3\x2\x2\x2\xB6"+
+		"\xB7\x3\x2\x2\x2\xB7\xB8\x3\x2\x2\x2\xB8\xB9\a\v\x2\x2\xB9\xBA\a\x16\x2"+
+		"\x2\xBA\xBB\a\v\x2\x2\xBB\xBC\b\b\x1\x2\xBC\xF\x3\x2\x2\x2&#%),\x31\x34"+
+		"\x38<?\x44GKORWZ^\x62hlpt|\x80\x86\x8A\x8E\x94\x98\x9E\xA2\xA6\xAA\xAE"+
+		"\xB2\xB6";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

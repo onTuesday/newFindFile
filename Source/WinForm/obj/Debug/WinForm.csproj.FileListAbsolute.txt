@@ -12,3 +12,16 @@ C:\Users\User\Desktop\Repos\newFindFile\Source\WinForm\bin\Debug\Antlr4.Runtime.
 C:\Users\User\Desktop\Repos\newFindFile\Source\WinForm\obj\Debug\WinForm.csproj.CopyComplete
 C:\Users\User\Desktop\Repos\newFindFile\Source\WinForm\bin\Debug\FindFile.dll
 C:\Users\User\Desktop\Repos\newFindFile\Source\WinForm\bin\Debug\FindFile.pdb
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\bin\Debug\WinForm.exe.config
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\bin\Debug\WinForm.exe
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\bin\Debug\WinForm.pdb
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\bin\Debug\Antlr4.Runtime.dll
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\bin\Debug\FindFile.dll
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\bin\Debug\FindFile.pdb
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\bin\Debug\Antlr4.Runtime.xml
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.csprojAssemblyReference.cache
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.Properties.Resources.resources
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.csproj.GenerateResource.cache
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.csproj.CopyComplete
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.exe
+C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.pdb

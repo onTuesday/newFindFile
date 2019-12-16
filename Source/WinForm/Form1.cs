@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using FindFile;
+using System.Threading;
 
 namespace WinForm
 {
     public partial class Form1 : Form
     {
+        public static bool stopThread = true;
         public Form1()
         {
             InitializeComponent();
@@ -24,28 +26,44 @@ namespace WinForm
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        public void button1_Click_1(object sender, EventArgs e)
         {
             Form2 newForm = new Form2();
             newForm.Show();
             Result.result.Clear();
-            Client a = new Client();
-            a.Find(Path.GetFullPath(textBox1.Text), textBox2.Text + "\n");
-
-
+            //Client a = new Client();
             Form2.treeView1.Nodes.Clear();
-            foreach (string elem in Result.result)
+            Client a = new Client();
+            //Thread myThread = new Thread(new ThreadStart(WtiteTree));
+            //myThread.Start();
+
+            Thread th1 = new Thread(new ThreadStart(delegate
             {
-                Form2.treeView1.BeginUpdate();
-                if (Form2.stop == true)
+                a.Find(Path.GetFullPath(textBox1.Text), textBox2.Text + "\n");
+                stopThread = false;
+                MessageBox.Show("Done \n", "Справка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }));
+            th1.Priority = ThreadPriority.Highest;
+            th1.IsBackground = true;
+            th1.Start();
+
+            //a.Find(Path.GetFullPath(textBox1.Text), textBox2.Text + "\n");
+            while (stopThread == true)
+            {
+                Thread.Sleep(10000);
+                foreach (string elem in Result.result)
+                {
+                    Form2.treeView1.BeginUpdate();
+
+                    Form2.treeView1.Nodes.Add(elem);
+                    Form2.treeView1.EndUpdate();
+                }
+                /*if (Form2.stop == true)
                 {
                     break;
-                }
-                Form2.treeView1.Nodes.Add(elem);
-                Form2.treeView1.EndUpdate();
+                }*/
             }
-
-        }
+        }   
 
         private void button2_Click(object sender, EventArgs e)
         {

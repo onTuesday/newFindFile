@@ -48,8 +48,23 @@ namespace FindFile
                     count += TraverseAllFiles(dir);
                 }
             }
+            catch(UnauthorizedAccessException)
+            {}
+            catch(DirectoryNotFoundException)
+            {
+                Error.SetError(@"Directory not Found.\nCheck Your's path.");
+                return count;
+            }
+            catch(PathTooLongException)
+            {
+                Error.SetError(@"Path too long!");
+                return count;
+            }
             catch (Exception)
-            { }
+            {
+                Error.SetError(@"Unknown error.");
+                return count;
+            }
             return count;
         }
 

@@ -18,6 +18,14 @@ namespace VisualTesting
             {
                 Console.WriteLine(elem);
             }
+            Result.result.Clear();
+            cl.Find(@"C:\dev", "Content ~ Anime31");
+            foreach (var elem in Result.result)
+            {
+                Console.WriteLine(elem);
+            }
+            Console.WriteLine(Error.GetErrorMsg());
+            
         }
 
         public static void RecursivePrint(string path)

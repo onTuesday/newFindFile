@@ -8,5 +8,6 @@ namespace FindFile
     public class Result
     {
         public static List<string> result = new List<string>();
+        public static bool isWorking {get; set; }
     }
 }
