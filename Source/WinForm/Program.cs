@@ -9,6 +9,8 @@ namespace WinForm
 {
     static class Program
     {
+        public static object locker = new object();
+
         [STAThread]
         static void Main()
         {

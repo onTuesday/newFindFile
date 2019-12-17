@@ -30,6 +30,8 @@ namespace WinForm
             Form2 newForm = new Form2();
             newForm.Show();
             Result.result.Clear();
+            Form2.WriteTreeList.Clear();
+            Form2.WriteTreeList.Add("Nothing");
             Form2.treeView1.Nodes.Clear();
             Client a = new Client();
 
