@@ -89,9 +89,11 @@ namespace FindFile
         {
             try
             {
-                StreamReader file = new StreamReader(new FileStream(this.name, FileMode.Open));
+                FileStream fileStream = new FileStream(this.name, FileMode.Open);
+                StreamReader file = new StreamReader(fileStream);
                 this.content = file.ReadToEnd();
-                this.length = (UInt64)(new System.IO.FileInfo(name).Length);
+                this.length = (UInt64)(new System.IO.FileInfo(this.name).Length);
+                
                 
             }
             catch(Exception)

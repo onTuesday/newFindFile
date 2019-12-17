@@ -176,12 +176,12 @@ namespace Testing
         {
             Client client12 = new Client();
 
-            string path12 = System.IO.Path.GetFullPath("..\\..\\..\\Testing\\TestFolder4");
+            string path12 = System.IO.Path.GetFullPath(@"Source\FindFile.Test\TestFolder4");
             string mask12 = "(Content~'Nixon')|(^(10<=Length<2M))\n";
             client12.Find(path12, mask12);
-            Assert.AreEqual(Result.result.Contains(System.IO.Path.GetFullPath("..\\..\\..\\Testing\\TestFolder4\\King Shawshank.txt")), true);
-            Assert.AreEqual(Result.result.Contains(System.IO.Path.GetFullPath("..\\..\\..\\Testing\\TestFolder4\\King The Shining.txt")), true);
-            Assert.AreEqual(Result.result.Contains(System.IO.Path.GetFullPath("..\\..\\..\\Testing\\TestFolder4\\The-Stand.txt")), true);
+            Assert.AreEqual(Result.result.Contains(System.IO.Path.GetFullPath(@"Source\FindFile.Test\TestFolder4\King Shawshank.txt")), true);
+            Assert.AreEqual(Result.result.Contains(System.IO.Path.GetFullPath(@"Source\FindFile.Test\TestFolder4\King The Shining.txt")), true);
+            Assert.AreEqual(Result.result.Contains(System.IO.Path.GetFullPath(@"Source\FindFile.Test\TestFolder4\The-Stand.txt")), true);
             Result.result.Clear();
         }
 

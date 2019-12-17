@@ -266,7 +266,7 @@ exprLength returns[bool value]
   ;
 
 exprContent returns[bool value]
-	: 'Content' ' '? '~' ' '? '\'' CONTENT_SYMBOLS '\''{ $value = CONTENT.Contains($CONTENT_SYMBOLS.text); }
+	: 'Content' ' '* '~' ' '* '\'' CONTENT_SYMBOLS '\''{ $value = CONTENT.Contains($CONTENT_SYMBOLS.text); }
 	;
 
 EQUAL_SIGN

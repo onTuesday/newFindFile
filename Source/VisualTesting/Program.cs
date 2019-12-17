@@ -19,12 +19,10 @@ namespace VisualTesting
                 Console.WriteLine(elem);
             }
             Result.result.Clear();
-            cl.Find(@"C:\dev", "Content ~ Anime31");
-            foreach (var elem in Result.result)
-            {
-                Console.WriteLine(elem);
-            }
-            Console.WriteLine(Error.GetErrorMsg());
+
+            FindFile.File fl = new FindFile.File(@"C:\dev\02\index.php");
+            fl.SetContentAndLenFromFile();
+            Console.WriteLine((string)fl);
             
         }
 

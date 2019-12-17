@@ -3957,11 +3957,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\XBO4\\Desktop\\FindFileByMask\\newFindFile\\Source\\FindFile\\FindFile.csproj",
+      "projectUniqueName": "D:\\newFindFile\\Source\\FindFile\\FindFile.csproj",
       "projectName": "FindFile",
-      "projectPath": "C:\\Users\\XBO4\\Desktop\\FindFileByMask\\newFindFile\\Source\\FindFile\\FindFile.csproj",
+      "projectPath": "D:\\newFindFile\\Source\\FindFile\\FindFile.csproj",
       "packagesPath": "C:\\Users\\XBO4\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\XBO4\\Desktop\\FindFileByMask\\newFindFile\\Source\\FindFile\\obj\\",
+      "outputPath": "D:\\newFindFile\\Source\\FindFile\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\XBO4\\AppData\\Roaming\\NuGet\\NuGet.Config",

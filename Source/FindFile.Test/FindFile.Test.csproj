@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckingErrors.cs" />
     <Compile Include="TestingClassClient.cs" />
     <Compile Include="TestingClassDirectoryHandler.cs" />
     <Compile Include="TestingClassFile.cs" />
