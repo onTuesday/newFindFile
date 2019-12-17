@@ -8,7 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 // Generated from D:\newFindFile\Source\FindFile\Mask.g4 by ANTLR 4.6.6
+=======
+// Generated from C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\Mask.g4 by ANTLR 4.6.6
+>>>>>>> 98f5092b6652f5978e8341155bf52f41df94e72e
 
 // Unreachable code detected
 #pragma warning disable 0162

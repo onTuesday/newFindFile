@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FindFile;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace VisualTesting
 {
@@ -12,6 +13,7 @@ namespace VisualTesting
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             Client cl = new Client();
             cl.Find(@"C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile.Test\TestFolder2", "Content~'Anime'");
             foreach (var elem in Result.result)
@@ -24,6 +26,23 @@ namespace VisualTesting
             fl.SetContentAndLenFromFile();
             Console.WriteLine((string)fl);
             
+=======
+            Regex maskRegEx1 = new Regex(@"(   ^
+                                               ( \( Name='[^/\:?""|]+' \) )?
+                                               [&|^]?
+                                               (
+                                                    ( \( Length=\d+[kKmMgGg]?  \) )
+                                                    |
+                                                    (  \(  ( \d+[kKmMgGg]? (<=)|(<) )? Length ( (<=)|(<) \d+[kKmMgGg]? )? \)  )
+                                               )?
+                                               [&|^]?
+                                               ( \( Content~[^~] \) )?
+                                               $
+                                           )
+                                            ",
+                                            RegexOptions.IgnorePatternWhitespace);
+            Console.WriteLine(maskRegEx1.IsMatch("(Name='qq')|(Length=10)&(Content!'qq')"));                           
+>>>>>>> 98f5092b6652f5978e8341155bf52f41df94e72e
         }
 
         public static void RecursivePrint(string path)

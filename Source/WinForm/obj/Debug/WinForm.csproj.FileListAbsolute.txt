@@ -26,6 +26,7 @@ C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinFor
 C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.exe
 C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.pdb
 C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.Form2.resources
+<<<<<<< HEAD
 C:\Users\User\Desktop\newFindFile\Source\WinForm\bin\Debug\WinForm.exe.config
 C:\Users\User\Desktop\newFindFile\Source\WinForm\bin\Debug\WinForm.exe
 C:\Users\User\Desktop\newFindFile\Source\WinForm\bin\Debug\WinForm.pdb
@@ -55,3 +56,6 @@ D:\newFindFile\Source\WinForm\obj\Debug\WinForm.csproj.GenerateResource.cache
 D:\newFindFile\Source\WinForm\obj\Debug\WinForm.csproj.CopyComplete
 D:\newFindFile\Source\WinForm\obj\Debug\WinForm.exe
 D:\newFindFile\Source\WinForm\obj\Debug\WinForm.pdb
+=======
+C:\Users\User\Desktop\Repos\newFindFile\Source\WinForm\obj\Debug\WinForm.Form2.resources
+>>>>>>> 98f5092b6652f5978e8341155bf52f41df94e72e

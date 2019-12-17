@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 D:\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskLexer.cs
 D:\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskParser.cs
 D:\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskListener.cs
 D:\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseListener.cs
 D:\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskVisitor.cs
 D:\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseVisitor.cs
+=======
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskLexer.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskParser.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskListener.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseListener.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskVisitor.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseVisitor.cs
+>>>>>>> 98f5092b6652f5978e8341155bf52f41df94e72e

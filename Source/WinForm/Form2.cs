@@ -10,13 +10,11 @@ using System.Windows.Forms;
 using FindFile;
 using System.Diagnostics;
 using System.Threading;
-using System.IO;
 
 namespace WinForm
 {
     public partial class Form2 : Form
     {
-        public static List<string> WriteTreeList = new List<string>();
         public Form2()
         {
             InitializeComponent();
@@ -24,29 +22,16 @@ namespace WinForm
 
         public void button2_Click(object sender, EventArgs e)
         {
-            bool endForeach = false;
-            lock (Program.locker)
+            foreach (string elem in Result.result)
             {
-                foreach (string elem in Result.result)
+                treeView1.BeginUpdate();
+                treeView1.Nodes.Add(elem);
+                treeView1.EndUpdate();
+
+                lock (Result.result)
                 {
-                    endForeach = false;
-                    for (int i = WriteTreeList.Count - 1; i >= 0; i--)
-                    {
-                        if (WriteTreeList[i] == elem)
-                        {
-                            endForeach = true;
-                            break;
-                        }
-                    }
-                    if (endForeach)
-                    {
-                        continue;
-                    }
-                    treeView1.BeginUpdate();
-                    treeView1.Nodes.Add(elem);
-                    treeView1.EndUpdate();
-                    WriteTreeList.Add(elem);
-                }
+                    Result.result.Remove(elem); 
+                }        
             }
         }
 
