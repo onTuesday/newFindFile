@@ -53,11 +53,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckingErrors.cs" />
     <Compile Include="TestingClassClient.cs" />
     <Compile Include="TestingClassDirectoryHandler.cs" />
     <Compile Include="TestingClassFile.cs" />
     <Compile Include="TestingMaskHandler.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

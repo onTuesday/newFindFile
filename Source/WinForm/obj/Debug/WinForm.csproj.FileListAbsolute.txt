@@ -26,3 +26,4 @@ C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinFor
 C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.exe
 C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.pdb
 C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\WinForm\obj\Debug\WinForm.Form2.resources
+C:\Users\User\Desktop\Repos\newFindFile\Source\WinForm\obj\Debug\WinForm.Form2.resources

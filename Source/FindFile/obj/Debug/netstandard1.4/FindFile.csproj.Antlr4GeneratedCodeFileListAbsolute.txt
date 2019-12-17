@@ -1,6 +1,6 @@
-C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskLexer.cs
-C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskParser.cs
-C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskListener.cs
-C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseListener.cs
-C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskVisitor.cs
-C:\Users\XBO4\Desktop\FindFileByMask\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseVisitor.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskLexer.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskParser.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskListener.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseListener.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskVisitor.cs
+C:\Users\User\Desktop\Repos\newFindFile\Source\FindFile\obj\Debug\netstandard1.4\MaskBaseVisitor.cs

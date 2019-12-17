@@ -20,15 +20,18 @@ namespace WinForm
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
-            lock (Result.result);
             foreach (string elem in Result.result)
             {
                 treeView1.BeginUpdate();
                 treeView1.Nodes.Add(elem);
-                Result.result.Remove(elem);
                 treeView1.EndUpdate();
+
+                lock (Result.result)
+                {
+                    Result.result.Remove(elem); 
+                }        
             }
         }
 
